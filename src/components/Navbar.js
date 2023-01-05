@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
+import CartWidget from './CartWidget'
 
 const Navbar=()=>{
   return (
@@ -15,8 +16,8 @@ const Navbar=()=>{
               <a class="nav-link active" aria-current="page" href="#">Inicio</a>
               <a class="nav-link" href="#">Productos</a>
               <a class="nav-link" href="#">Servicios</a>
-              <a class="nav-link" href="#">Carrito</a>
               <a class="nav-link" href="#">Contacto</a>
+              <CartWidget/>
             </div>
           </div>
         </div>
