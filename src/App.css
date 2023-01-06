@@ -19,3 +19,22 @@
 #barraNavegacion {
   background-color: #ffdb15;
 }
+
+#footer {
+  background-color: #ffdb15;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  color: black;
+}
+
+#textoFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main {
+  background-color: #ffdb15;
+}

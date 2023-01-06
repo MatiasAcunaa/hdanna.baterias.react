@@ -1,14 +1,16 @@
-import Navbar from './components/Navbar';
 import './App.css';
 import ItemListContainer from './components/ItemListContainer';
+import Header from './components/Header';
+import Main from './components/Main';
+import Footer from './components/Footer';
 
 const App=()=>{
   return (
     <>
-      <header className="App-header">
-        <Navbar/>
-      </header>
+      <Header/>
       <ItemListContainer greeting="Hola profe"/>
+      <Main/>
+      <Footer/>
     </>
   );
 }
