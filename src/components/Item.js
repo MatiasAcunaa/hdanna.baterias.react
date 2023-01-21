@@ -6,7 +6,7 @@ const Item = ({producto}) => {
       <h5>{producto.title}</h5>
       <img src={'https://picsum.photos/200?random=${producto.id}'} alt={producto.title} />
       <p>{producto.price}</p>
-      <Link to={"/productos/" + producto.id}>Ver mas</Link>
+      <Link to={"/item/" + producto.id}>Ver mas</Link>
     </article>
   )
 };
