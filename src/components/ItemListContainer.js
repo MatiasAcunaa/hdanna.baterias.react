@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
+import {db} from "../firebase"
+import { collection, getDocs } from "firebase/firestore";
 
 const ItemListContainer=()=>{
   
@@ -12,6 +14,8 @@ const ItemListContainer=()=>{
 
   useEffect (()=>{
 
+    //const productosCollection = collection(db, "productos")
+    //const pedidoFirestore = getDocs()
     const pedido = fetch('https://fakestoreapi.com/products')
 
     pedido
@@ -33,10 +37,10 @@ const ItemListContainer=()=>{
   },[])
   
   return (
-    <div>
-      {load ? 'Productos cargados' : 'Cargando...'}
+    <>
+      {load ? null : 'Cargando...'}
       <ItemList productos={productos}/>
-    </div>
+    </>
   )
 }
 
