@@ -8,7 +8,7 @@ const Navbar=()=>{
     <>
       <nav className='navbar navbar-expand-lg navbar-light' id='barraNavegacion'>
         <div className='container-fluid'>
-          <Link className='navbar-brand' to='/'><a >H. Danna baterias y radiadores</a></Link>
+          <Link className='navbar-brand mt-2 mb-2' to='/'><h4>H. Danna baterias y radiadores</h4></Link>
           <button className='navbar-toggler' type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className='navbar-toggler-icon'></span>
           </button>
