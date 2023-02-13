@@ -15,5 +15,7 @@ const firebaseConfig = {
 
 // Esta es una variable que representa la plataforma en si
 const app = initializeApp(firebaseConfig);
+
 // Esta es una variable que representa la pestana "Firestore database o la base de datos"
-export const db = getFirestore(app)
+export const db = getFirestore(app);
+

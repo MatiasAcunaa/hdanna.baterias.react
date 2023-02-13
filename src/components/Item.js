@@ -5,7 +5,7 @@ const Item = ({producto}) => {
   return (
     <article key={producto.id} className="product-card">
       <h5>{producto.title}</h5>
-      <img src={'https://picsum.photos/200?random=${producto.id}'} alt={producto.title} />
+      <img className="product-card__iamge" src={producto.image} alt={producto.title} />
       <p>${producto.price}</p>
       <button><Link id="botonCard" to={"/item/" + producto.id}>Ver mas</Link></button>
     </article>

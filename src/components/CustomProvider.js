@@ -15,16 +15,8 @@ const CustomProvider = ({children}) => {
     //setCarrito(copia)
   }
 
-  const eliminarProducto = (id) => {
-    
-  }
-
   const vaciarCarrito = () => {
     setCarrito([])
-  }
-  
-  const estaEnCarrito = (id) => {
-    
   }
 
   const valorDelContexto = {

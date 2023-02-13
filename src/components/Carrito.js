@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import {useState} from "react"
 import {db} from "../firebase"
-import { collection } from 'firebase/firestore';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const Carrito = () => {
 
@@ -10,7 +10,25 @@ const Carrito = () => {
   const [email, setEmail] = useState("")
 
   const handleClick = (e) => {
-    console.log(nombre, email)
+    const orden ={
+      usuario : {
+        nombre: nombre,
+        email : email,
+        telefono : ""
+      },
+      productos : []
+    }
+
+    const ventasCollection = collection(db, "ventas")
+    const pedido = addDoc(ventasCollection, orden)
+
+    pedido
+    .then((resultado)=>{
+
+    })
+    .catch(error=>{
+
+    })
   }
   const handleChangeName = (e) => {
     setNombre(e.target.value)

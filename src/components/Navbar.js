@@ -8,7 +8,7 @@ const Navbar=()=>{
     <>
       <nav className='navbar navbar-expand-lg navbar-light' id='barraNavegacion'>
         <div className='container-fluid'>
-          <Link className='navbar-brand mt-2 mb-2' to='/'><h4>H. Danna baterias y radiadores</h4></Link>
+          <Link className='navbar-brand mt-2 mb-2' to='/'><h4>E-Commerce</h4></Link>
           <button className='navbar-toggler' type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className='navbar-toggler-icon'></span>
           </button>
@@ -16,7 +16,6 @@ const Navbar=()=>{
             <div className='navbar-nav'>
               <Link className='nav-link active' aria-current="page" to="/productos/electronica">Electronica</Link>
               <Link className='nav-link' to="/productos/ropa">Ropa</Link>
-              <Link className='nav-link' to="/productos/hogar">Hogar</Link>
               <Link className='nav-link' to="/carrito"><CartWidget></CartWidget></Link>
             </div>
           </div>
