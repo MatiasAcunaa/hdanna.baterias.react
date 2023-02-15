@@ -9,29 +9,29 @@ const ItemListContainer=()=>{
   
   const [load, setLoad] = useState (false)
   const [productos, setProductos] = useState ([])
-  const [category, setCategory] = useState([]);
 
-  //const { category } = useParams();
+  const { category } = useParams();
 
   useEffect (()=>{ 
 
     toast.info ("Cargando productos...") 
 
-
     const productosCollection = collection(db, "productos")
-    const filtroElectronics = query(productosCollection, where("category", "==", "electronics"))
-    const filtroClothing = query(productosCollection, where("category", "==", "Clothing"))
 
-    const pedidoFirestore = getDocs(productosCollection)
-    //const pedidoFirestore = getDocs(filtro?)
 
-    pedidoFirestore 
+    if (category){
+
+      const filtro = query(productosCollection, where("category", "==", category))
+      const pedidoFirestore = getDocs(filtro)
+
+      pedidoFirestore 
 
       .then((respuesta)=>{
 
         const productos = respuesta.docs.map(doc=>({ ...doc.data(), id: doc.id}))
 
         setProductos(productos)
+
         setLoad(true)
         toast.dismiss()
         toast.success("Productos cargados!")
@@ -40,8 +40,29 @@ const ItemListContainer=()=>{
       .catch((error)=>{
         toast.error ("Hubo un error, vuelva a intentarlo")
       })
+    }
 
-  },[])
+    else {
+      const pedidoFirestore = getDocs(productosCollection)
+
+      pedidoFirestore 
+
+      .then((respuesta)=>{
+
+        const productos = respuesta.docs.map(doc=>({ ...doc.data(), id: doc.id}))
+
+        setProductos(productos)
+
+        setLoad(true)
+        toast.dismiss()
+        toast.success("Productos cargados!")
+      }) 
+
+      .catch((error)=>{
+        toast.error ("Hubo un error, vuelva a intentarlo")
+      })
+    }
+  },[category])
   
   return (
     <>

@@ -8,20 +8,23 @@ import ItemDetail from "./ItemDetail"
 
 const ItemDetailContainer = () => {
 
-    const [producto,setProducto] = useState({})
-    const { id } = useParams()
+    const [producto,setProducto] = useState({});
+    const { id } = useParams();
 
     useEffect(() => {
 
         toast.info("Cargando producto...")
 
         const productosCollection = collection(db, "productos")
-        const referencia = doc(productosCollection, "CPd4N5aK6m3wZiaQmxx5")
+        
+        const referencia = doc(productosCollection, id)
         const pedido = getDoc(referencia)
 
         pedido
             .then((respuesta) => {
-                const producto = respuesta.data()
+                
+                const producto = {id: respuesta.id, ...respuesta.data()}
+
                 setProducto(producto)
                 toast.dismiss()
                 toast.success("Producto cargado!")

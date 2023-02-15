@@ -1,21 +1,24 @@
 import { useContext } from "react";
 import { contexto } from "./CustomProvider";
-import ItemCount from "./ItemCount";
 
-const ItemDetail = ({title, image, description, price, stock}) => {
+import ItemCount from './ItemCount';
+
+const ItemDetail = ({producto, precio=producto.price , titulo=producto.title , 
+  descripcion=producto.description , imagen=producto.image , 
+  stock=producto.stock}) => {
 
   const onAdd = (parametro) => {
-    console.log(parametro)
+    //console.log(parametro)
   }
 
-  return ( 
+  return (
     <div>
-      <h1> {title} - ${price} </h1>
-      <img src={image} alt="picsum" />
-      <p> {description} </p>
+      <h1>{titulo} - ${precio}</h1>
+      <img src={imagen} alt="picsum" />
+      <p>{descripcion}</p>
       <ItemCount stock={stock} onAdd={onAdd} />
     </div>
-   );
+    )
 }
- 
-export default ItemDetail;
+
+export default ItemDetail
