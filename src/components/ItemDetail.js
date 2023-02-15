@@ -8,7 +8,7 @@ const ItemDetail = ({producto, precio=producto.price , titulo=producto.title ,
   stock=producto.stock}) => {
 
   const onAdd = (parametro) => {
-    //console.log(parametro)
+    
   }
 
   return (
