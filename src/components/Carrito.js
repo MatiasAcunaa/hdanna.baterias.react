@@ -37,16 +37,16 @@ const Carrito = () => {
   const handleChangeEmail = (e) => {
     setEmail(e.target.value)
   }
-
+  
   return ( 
-    <div>
+    <div className='containerCarrito'>
       <div>
-        <input type="text" onChange={handleChangeName} placeholder="Nombre"/>
+        <input type="text" onChange={handleChangeName} placeholder="Nombre" className='inputCarrito'/>
       </div>
       <div>
-        <input type="text" onChange={handleChangeEmail} placeholder="Email"/>
+        <input type="text" onChange={handleChangeEmail} placeholder="Email" className='inputCarrito'/>
       </div>
-      <button type='button' onClick={handleClick}>Finalizar compra</button>
+      <button type='button' onClick={handleClick} className='inputCarrito'>Finalizar compra</button>
     </div>
    );
 }
