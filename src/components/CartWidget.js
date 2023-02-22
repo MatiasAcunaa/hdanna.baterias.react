@@ -9,7 +9,6 @@ const CartWidget=()=>{
     <>
       <div>
         <span className='material-icons'>shopping_cart</span>
-        {totalProductos}
       </div>
     </>
   );

@@ -10,9 +10,7 @@ const CustomProvider = ({children}) => {
   const [totalProductos, setTotalProductos] = useState(0)
 
   const agregarProducto = (producto, cantidad) => {
-    //const copia = [...arr]
-    //copia.push(producto)
-    //setCarrito(copia)
+
   }
 
   const vaciarCarrito = () => {

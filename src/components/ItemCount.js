@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../App.css";
 
-const ItemCount = ({stock, onAdd}) => {
+const ItemCount = ({stock, onAdd, inital}) => {
 
   const [contador, setContador] = useState (1)
 
@@ -24,12 +24,12 @@ const ItemCount = ({stock, onAdd}) => {
   }
 
   return ( 
-    <div>
+    <div className="counter">
       <button onClick={handleSumar}>+</button>
       <p>Cantidad: {contador}</p>
-      <button onClick={handleRestar}>-</button>
+      <button disabled={contador <= 1} onClick={handleRestar}>-</button>
       <div id="contenedorConfirmarResetear">
-        <button onClick={handleConfirmar}>Confirmar</button>
+        <button disabled={stock<=0} onClick={handleConfirmar}>Agregar al carrito</button>
         <button onClick={handleResetear}>Resetear</button>
       </div>
     </div>

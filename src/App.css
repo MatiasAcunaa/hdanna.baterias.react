@@ -131,3 +131,8 @@ body {
   margin-top: 1rem;
   border: black 1px solid;
 }
+
+.counter {
+  margin: auto;
+  padding: auto;
+}

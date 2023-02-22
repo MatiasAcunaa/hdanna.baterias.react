@@ -14,7 +14,6 @@ const Carrito = () => {
       usuario : {
         nombre: nombre,
         email : email,
-        telefono : ""
       },
       productos : []
     }
